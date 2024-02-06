@@ -3,6 +3,9 @@ import IntroductionSlide from "./Slides/Introduction";
 
 export default function MultiSlide() {
   return (
-    <IntroductionSlide></IntroductionSlide>
+    <div className="flex">
+      <IntroductionSlide></IntroductionSlide>
+    </div>
+    
   );
 }

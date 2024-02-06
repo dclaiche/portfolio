@@ -8,7 +8,7 @@ export default function Nav() {
     const [showSidebar, setShowSidebar] = useState<boolean>(false);
 
     return (
-        <div>
+        <div>  
             <TopNavBar />
             <MenuBarMobile setter={setShowSidebar} />
             <SideBar show={showSidebar} setter={setShowSidebar} />

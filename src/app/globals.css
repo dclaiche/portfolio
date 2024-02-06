@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Custom styles for the menu button */
+#menuBtn {
+    width: 50px;
+    height: 22px;
+}
+#menuBtn.clicked .bar:nth-child(1) {
+    bottom: 45%;
+    transform: translateY(-50%) rotate(45deg);
+    transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+#menuBtn.clicked .bar:nth-child(2) {
+    top: 45%;
+    transform: translateY(-50%) rotate(-45deg);
+    transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+#bar {
+    height: 3px;
+}

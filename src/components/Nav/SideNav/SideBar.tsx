@@ -15,7 +15,7 @@ export default function SideBar({ show, setter } : SideBarProps) {
 
     // Define our base class
     // bg-black w-[250px] transition-[margin-left] ease-in-out duration-500 fixed md:static top-0 bottom-0 left-0 z-40
-    const className = "bg-black w-1/5";
+    const className = "fixed top-1/2 bg-black w-1/5";
     // Append class based on state of sidebar visiblity
     const appendClass = show ? " ml-0" : " ml-[-250px] md:ml-0";
 
