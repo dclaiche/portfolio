@@ -2,20 +2,16 @@
 
 import React, { useState, useEffect, SetStateAction, Dispatch } from 'react'
 import Link from 'next/link'
-
-import { SlHome } from 'react-icons/sl'
-import { BsInfoSquare, BsEnvelopeAt } from 'react-icons/bs'
-import { FaTshirt, FaRedhat } from 'react-icons/fa'
 import { SideBarProps } from '@/types/SideBarProps'
 import { MenuBarProps } from '@/types/MenuBarProps'
 
-import logo from '@/photo.jpg'
-
 export default function SideBar({ show, setter } : SideBarProps) {
+
+    const [clickedItem, setClickedItem] = useState(0);
 
     // Define our base class
     // bg-black w-[250px] transition-[margin-left] ease-in-out duration-500 fixed md:static top-0 bottom-0 left-0 z-40
-    const className = "fixed top-1/2 bg-black w-1/5";
+    const className = "fixed top-96 w-20 h-20 z-10 mb-96 ml-14";
     // Append class based on state of sidebar visiblity
     const appendClass = show ? " ml-0" : " ml-[-250px] md:ml-0";
 
@@ -40,51 +36,29 @@ export default function SideBar({ show, setter } : SideBarProps) {
         )
     }
 
-    // Overlay to prevent clicks in background, also serves as our close button
-    const ModalOverlay = () => (
-        <div
-            className={`flex md:hidden fixed top-0 right-0 bottom-0 left-0 bg-black/50 z-30`}
-            onClick={() => {
-                setter(!show);
-            }}
-        />
-    )
+    // // Overlay to prevent clicks in background, also serves as our close button
+    // const ModalOverlay = () => (
+
+        
+    //     <div
+    //         className={`flex md:hidden fixed top-0 right-0 bottom-0 left-0 bg-black/50`}
+    //         onClick={() => {
+    //             setter(!show);
+    //         }}
+    //     />
+    // )
 
     return (
         <>
-            <div className={`${className}${appendClass}`}>
-                <div className="p-2 flex">
-             
-                </div>
-                <div className="flex flex-col">
-                    <MenuItem
-                        name="Home"
-                        route="/"
-                        icon={<SlHome />}
-                    />
-                    <MenuItem
-                        name="T-Shirts"
-                        route="/t-shirts"
-                        icon={<FaTshirt />}
-                    />
-                    <MenuItem
-                        name="Hats"
-                        route="/hats"
-                        icon={<FaRedhat />}
-                    />
-                    <MenuItem
-                        name="About Us"
-                        route="/about"
-                        icon={<BsInfoSquare />}
-                    />
-                    <MenuItem
-                        name="Contact"
-                        route="/contact"
-                        icon={<BsEnvelopeAt />}
-                    />
-                </div>
+            <div className={`${className}`}>
+                <ul id="navMenu" className="flex flex-col">
+                        <li className={` h-1 ${clickedItem === 0 ? 'w-3/4' : 'w-2/4'} mb-10 bg-white rounded-sm cursor-pointer `} onClick={() => setClickedItem(0)}></li>
+                        <li className={` h-1 ${clickedItem === 1 ? 'w-3/4' : 'w-2/4'} mb-10 bg-white rounded-sm cursor-pointer `} onClick={() => setClickedItem(1)}></li>
+                        <li className={` h-1 ${clickedItem === 2 ? 'w-3/4' : 'w-2/4'} mb-10 bg-white rounded-sm cursor-pointer `} onClick={() => setClickedItem(2)}></li>
+                        <li className={` h-1 ${clickedItem === 3 ? 'w-3/4' : 'w-2/4'} mb-10 bg-white rounded-sm cursor-pointer `} onClick={() => setClickedItem(3)}></li>
+                </ul>
             </div>
-            {show ? <ModalOverlay /> : <></>}
+            {/* {show ? <ModalOverlay /> : <></>} */}
         </>
     )
 }
