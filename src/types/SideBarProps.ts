@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
 export interface Setter {
-    setter: React.Dispatch<React.SetStateAction<boolean>>;
+    setClickedItem: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 export interface SideBarProps extends Setter {
-    show: boolean;
+    clickedItem: boolean;
 };
 
 export type MenuItemProps = {

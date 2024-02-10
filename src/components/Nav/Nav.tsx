@@ -10,8 +10,8 @@ export default function Nav() {
     return (
         <div>  
             <TopNavBar />
-            <MenuBarMobile setter={setShowSidebar} />
-            <SideBar show={showSidebar} setter={setShowSidebar} />
+            {/* <MenuBarMobile />
+            <SideBar /> */}
         </div>
     );
 };
