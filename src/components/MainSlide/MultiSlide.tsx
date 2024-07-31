@@ -1,7 +1,6 @@
 // Multislide.server.js
-import IntroductionSlide from "./Slides/Introduction";
 import SideBar from "../Nav/SideNav/SideBar";
-import Link from "next/link";
+
 
 export default function MultiSlide() {
   return (

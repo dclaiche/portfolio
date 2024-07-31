@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "../components/Nav/Nav";
+import { Inter as FontSans } from "next/font/google"
 
-const inter = Inter({ subsets: ["latin"] });
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+import { cn } from "@/lib/utils"
+
+
 
 
 
@@ -19,7 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <body className="bg-gray-800 text-white text-xl overflow-hidden h-full leading-tight">
+        <body className={cn(
+          "min-h-screen bg-background font-sans antialiased bg-gray-800 text-white text-xl overflow-hidden h-full leading-tight",
+          fontSans.variable
+        )}>
         <Nav/>
         {children}
         </body>
