@@ -13,3 +13,5 @@ export type MenuItemProps = {
     route: string; // replace with the actual type
     icon: ReactNode; // replace with the actual type
   };
+  
+export type SectionName = 'Introduction' | 'About' | 'Website' | 'Contact';
